@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>jelly</title>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="row">
+            <div class="columns">
+                <div class="column is-3">
+                    <br>
+                    <br>
+                    <div>
+                        <button @click="search=true"  class="button is-warning">Search</button>
+                    </div>
+                    <br>
+                    
+                    <div>
+                        <a href="#" @click="search=false" class="button is-info">Add user</a>
+                    </div>
+                    <div v-if="search">
+                        <br>
+                        
+                        
+                        <label for="" class="label">name</label>
+                        <input type="text" v-model="uname" name="" id="" class="input" placeholder="Enter name to search">
+                        <br>
+                         <br>
+                        <a @click="searchname" href="#" class="button is-success">search</a>
+                    </div>
+                    <div v-if="!search">
+                        <br>
+                        
+                        
+                        <label for="" class="label">name</label>
+                        <input type="text" v-model="xname" name="" id="" class="input" placeholder="Enter name to search">
+                        <br>
+                        <label for="" class="label">password</label>
+                        <input type="text" v-model="xpass" name="" id="" class="input" placeholder="Enter name to search">
+                        <br>
+                         <br>
+                        <button @click="addname()" class="button is-success">add user</button>
+                    </div>
+                   
+                </div>
+                <div class="column is-3">
+                    <br><br><br>
+                    <p>{{msg}}</p>
+                    <!-- <ul>
+                        <li v-for="x in fulllog">*...{{x}}</li>
+                    </ul> -->
+                </div>
+                <div class="column is-3">
+                    <br><br><br>
+                    <!-- <p>{{msg}}</p> -->
+                    <ul>
+                        <li v-for="x in fulllog">*...{{x}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/vue.js"></script>
+    <script src="js/socket.io.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
